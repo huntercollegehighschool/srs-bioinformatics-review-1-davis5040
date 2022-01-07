@@ -9,11 +9,11 @@ part = (input("Which part(A, B, C, D, E)?")).upper()
 while part not in ['A', 'B', 'C', 'D', 'E']:
   os.system('clear')
   print("That's not a valid part.")
-  part = int(input("Which part(A, B, C, D, E)?")).upper()
+  part = input("Which part(A, B, C, D, E)?").upper()
 
 os.system('clear')
 
-dna = ["ACTGAAAGTG", "CTGAAAGT", "GGAAAGCC" "TTAACCGAAAG", "ACD"]
+dna = ["AAT", "AAT", "AAT", "GTA"]
 
 if part == "A":
   from Antcheck import isDNA
@@ -37,4 +37,4 @@ elif part == "D":
 
 elif part == "E":
   from Ecommonsubstring import commonsubstring
-  print("Common substring:", commonsubstring(dna[:-1]))
+  print("Common substring:", commonsubstring(dna))
