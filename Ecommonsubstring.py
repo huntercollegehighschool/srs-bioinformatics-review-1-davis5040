@@ -22,7 +22,7 @@ def issubstring(a, b): #is a a substring of b?
       if b[cur:cur+la] == a: ans = True
     return ans
 
-
+#time complexity is O(n^4), not sure if any faster solution exists
 def commonsubstring(dnalist):
   s = "" #shortest dna string
   sz = 1000000000 #size of shortest dna
