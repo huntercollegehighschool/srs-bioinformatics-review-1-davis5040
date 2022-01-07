@@ -10,4 +10,11 @@ reversecomplement("AAGCT") should return "AGCTT".
 """
 
 def reversecomplement(dna):
-  pass  # delete this line when you start writing your code
+  s = dna[::-1]
+  ans = ""
+  for x in s:
+    if x == "A": ans += "T"
+    if x == "T": ans += "A"
+    if x == "C": ans += "G"
+    if x == "G": ans += "C"
+  return ans

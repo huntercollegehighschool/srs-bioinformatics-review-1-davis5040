@@ -8,6 +8,38 @@ Define a function commonsubstring that takes a list of DNA strings as an input.
 For example,
 commonsubstring("ACGCT", "CGCCA", "ATTACGCT") should return ["CGC"]
 """
+from Antcheck import isDNA
 
 def commonsubstring(dnalist):
-  pass  # delete this line when you start writing your code
+  s = ""
+  sz = 1000000000
+  for x in dnalist:
+    if isDNA(x) == False: return "error"
+    if len(x) <= sz:
+      s = x
+      sz = len(x)
+  best = -1
+  d = []
+  l = sz
+  for i in range(sz-1):
+    cur = 0
+    for j in range(sz-l+1):
+      ch = s[cur:cur+l]
+      pos = False
+      for k in dnalist:
+        good = False
+        cur1 = 0
+        it = len(k) - l + 1
+        for m in range(it):
+          if k[cur1:cur1+l] == ch:
+            good = True
+        if good == True: pos = True
+        cur1 = cur1 + 1
+      if pos == True: 
+        if len(ch) >= best:
+          best = len(ch)
+          d.append(ch)
+    cur = cur + 1
+  return d
+
+

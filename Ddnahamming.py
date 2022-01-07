@@ -9,6 +9,14 @@ Define a function hammingdistance that takes 2 DNA string inputs.
 
 For example, hammingdistance("TTAC", "TGAA") should return 2.
 """
+from Antcheck import isDNA
 
 def hammingdistance(dna1, dna2):
-  pass  # delete this line when you start writing your code
+  if isDNA(dna1) == False: return "error"
+  if isDNA(dna2) == False: return "error"
+  if len(dna1) != len(dna2): return "error"
+  l = len(dna1)
+  ans = 0
+  for i in range(l):
+    if dna1[i] != dna2[i]: ans += 1
+  return ans

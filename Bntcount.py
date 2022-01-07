@@ -9,6 +9,22 @@ For example:
 ntcount("AACTGTA") 
 returns {"A": 3, "C": 1, "G": 1, "T": 2}
 """
+from Antcheck import isDNA
 
 def ntcount(dna):
-  pass  # delete this line when you start writing your code
+  a = 0
+  c = 0
+  g = 0
+  t = 0
+  if isDNA(dna) == False: return "Error"
+  for x in dna: 
+    if x == "A": a += 1
+    if x == "C": c += 1
+    if x == "G": g += 1
+    if x == "T": t += 1
+  d = {}
+  d["A"] = a
+  d["C"] = c
+  d["G"] = g
+  d["T"] = t
+  return d
